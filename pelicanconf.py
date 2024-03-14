@@ -31,11 +31,3 @@ DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
-
-# Elegent theme customization
-TAGS_URL = "tags"
-CATEGORIES_URL = "categories"
-ARCHIVES_URL = "archives"
-ARTICLE_URL = "{slug}"
-PAGE_URL = "{slug}"
-PAGE_SAVE_AS = "{slug}.html"
