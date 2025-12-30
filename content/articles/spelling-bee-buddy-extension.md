@@ -7,18 +7,24 @@ Summary: A technical deep dive into creating a cross-browser extension that enha
 
 ## The Problem
 
-The [NYT Spelling Bee](https://www.nytimes.com/puzzles/spelling-bee) is an addictive word puzzle, and the New York Times provides an excellent companion tool called the [Spelling Bee Buddy](https://www.nytimes.com/interactive/2023/upshot/spelling-bee-buddy.html) that shows a grid and two-letter list to help players find words. However, this tool lives on a separate page, requiring players to constantly switch tabs whilst playing.
+The [NYT Spelling Bee](https://www.nytimes.com/puzzles/spelling-bee) is an addictive word puzzle. When I play, I sometimes get stumped and reach for the excellent companion tool the New York Times provides: the [Spelling Bee Buddy](https://www.nytimes.com/interactive/2023/upshot/spelling-bee-buddy.html). It shows a grid and two-letter list to help players find words. But constantly flipping between tabs felt clunky. There must be a better way.
+
+I'd used Tampermonkey userscripts in the past for this sort of thing, but I wanted to try building a proper browser extension—partly to solve this minor inconvenience for myself, and partly to see if I could make something others might find useful too.
 
 The goal: embed the Buddy's grid and two-letter list directly into the game page for easy reference.
 
 ![NYT Spelling Bee Game]({static}/images/spelling-bee-game.png)
 *The NYT Spelling Bee puzzle interface*
 
-![Spelling Bee Buddy Grid]({static}/images/spelling-bee-buddy.png)
+<div class="elegant-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <a href="{static}/images/spelling-bee-buddy.png" itemprop="contentUrl" data-size="1360x4004">
+      <img src="{static}/images/spelling-bee-buddy.png" itemprop="thumbnail" alt="Spelling Bee Buddy Grid" style="max-width: 300px; height: auto;" />
+    </a>
+    <figcaption itemprop="caption description">The Buddy's grid and two-letter list on a separate page (click to view full size)</figcaption>
+  </figure>
+</div>
 *The Buddy's grid and two-letter list on a separate page*
-
-![Spelling Bee Buddy Extension in Action]({static}/images/spelling-bee-extension-screenshot.png)
-*The extension embeds the Buddy directly below the game for easy reference*
 
 ## Development Approach: Building with Claude Code
 
@@ -219,9 +225,16 @@ iframe.src = BUDDY_URL + (gameDate ? `?date=${gameDate}` : '');
 
 During development, I briefly explored accessing the page's `window.gameData.today.printDate` variable directly. However, content scripts run in an isolated JavaScript context and can't access page variables without injecting a script element, setting up event communication, and polling for availability. The URL parameter approach was already working perfectly and far simpler, so I abandoned this dead end quickly.
 
+With the core functionality complete—iframe embedding, content filtering, dynamic sizing, and date synchronization—the extension now seamlessly integrates the Buddy into the game page:
+
+![Spelling Bee Buddy Extension in Action]({static}/images/spelling-bee-extension-screenshot.png)
+*The extension embeds the Buddy's grid and two-letter list directly below the game for easy reference*
+
 ## Challenge 4: Cross-Browser Compatibility
 
-With the core functionality working reliably in Firefox (my primary browser), I was curious how much effort would be needed to make this work in Chromium-based browsers too. Modern browser extensions face a unique challenge: Firefox and Chrome have diverged in their implementation of Manifest V3, particularly around permissions.
+With the core functionality working reliably in Firefox (my primary browser), I was curious how much effort would be needed to make this work in Chromium-based browsers too.
+
+Both [Firefox](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions) and [Chrome](https://developer.chrome.com/docs/extensions/get-started/) have adopted the [WebExtensions standard](https://www.w3.org/community/webextensions/), which in theory means extensions should work across browsers with minimal changes. Firefox even provides a [porting guide](https://extensionworkshop.com/documentation/develop/porting-a-google-chrome-extension/) for adapting Chrome extensions. However, modern browser extensions face a unique challenge: Firefox and Chrome have diverged in their implementation of Manifest V3, particularly around permissions.
 
 Manifest V3 support in Firefox has some quirks and non-obvious differences in behaviour between V2 and even V3 in Chromium. The most problematic: Firefox treats MV3 `host_permissions` as optional, allowing users to deny them. This breaks the extension since it requires access to inject content scripts.
 
@@ -635,7 +648,32 @@ With the code quality improved and the core functionality solid, attention turne
 
 ## User Experience Touches
 
-### 1. Clickable Title Link
+### 1. Side-by-Side Layout
+
+The Buddy page originally displays the grid and two-letter list vertically stacked, requiring significant scrolling. The extension arranges them side-by-side when there's sufficient width:
+
+```javascript
+const style = document.createElement('style');
+style.textContent = `
+  .the-square,
+  .the-square-part-two {
+    display: inline-block !important;
+    vertical-align: top;
+    width: calc(50% - ${SECTION_GAP}px);
+  }
+  @media (max-width: ${MIN_SECTION_WIDTH * 2}px) {
+    .the-square,
+    .the-square-part-two {
+      display: block !important;
+      width: 100%;
+    }
+  }
+`;
+```
+
+This reduces scrolling distance and lets players see both widgets at a glance.
+
+### 2. Clickable Title Link
 
 The "Spelling Bee Buddy" header links to the full Buddy page:
 
