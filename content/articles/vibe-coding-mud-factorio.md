@@ -25,6 +25,8 @@ Gas Town works surprisingly similarly. The verbs are different—`gt sling`, `gt
 
 The feedback loop is pure MUD: command, textual confirmation of state change, wait, check the activity feed to see what happened while you were away. Yegge's tmux UI is basically a split-screen MUD client showing multiple "rooms" (sessions) at once. The naming conventions reinforce this—Polecats, the Refinery, the Witness, the Deacon, Dogs. These aren't abstractions. They're *characters* in a world—like the Drunk, the Poisoner, and the Baron in Blood on the Clocktower, each with their own quirks and roles. You're playing a game where your party members are superintelligent chimps with persistent identities, and you're issuing them quests (molecules).
 
+And here's the crucial part: **you don't actually look at the code.** Just like in a MUD, you don't get to peek behind the curtain and inspect the room data structures directly. Your entire interaction with the codebase is mediated through the agent windows. The "world" is the code, but you only perceive it through what your agents report back. You issue commands, you read their responses, you check status dashboards—but you're not opening files in an editor to see what they actually did. In true agentic development, the code is as invisible to you as the MUD server's memory was. Your reality is constructed entirely from text that agents feed you.
+
 ## The SimCity/Factorio Layer
 
 Here's where it gets interesting. In SimCity, you don't build houses—you zone residential and the simulation populates it. In Factorio, you don't craft iron plates by hand (after the first few minutes)—you lay down miners, furnaces, and belts, and let the factory run.
@@ -56,7 +58,7 @@ What I think we're seeing is an emergent genre that doesn't have a good name yet
 
 1. **Declarative intent, emergent execution.** You describe what you want (zone residential, design molecule, sling convoy) and autonomous agents figure out the how. You observe outcomes, not processes.
 
-2. **Text as primary interface to complex state.** You can't see the factory floor. You see activity feeds, status lines, dashboard summaries. Your "view" of the system is constructed from textual artifacts, not visual inspection. Yegge calls this "tending the invisible garden"—you do regular sweeps (code review, then bug fixes, then more code review), hoping that most of the time you don't find anything bad. The only way to be sure is to keep doing it.
+2. **Text as primary interface to complex state.** You can't see the factory floor—and in true agentic development, you don't look at the code directly either. Your entire perception of the system comes through agent reports, activity feeds, status lines, and dashboard summaries. Like a MUD where you never see the actual room data structures, the codebase exists "behind the curtain" while you interact with it purely through textual descriptions. Yegge calls this "tending the invisible garden"—you do regular sweeps (code review, then bug fixes, then more code review), hoping that most of the time you don't find anything bad. The only way to be sure is to keep doing it.
 
 3. **Persistent world with ephemeral actors.** The Beads database is like the Factorio map—it persists. The polecats are like construction bots—they come and go, but the infrastructure remains.
 
