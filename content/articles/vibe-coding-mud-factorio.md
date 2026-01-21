@@ -17,7 +17,7 @@ Steve Yegge [announced](https://steve-yegge.medium.com/welcome-to-gas-town-4f25e
 
 If you're old enough to remember Multi-User Dungeons—those text-based virtual worlds from the dialup era—Gas Town might trigger some unexpected nostalgia.
 
-For those who missed that era: A MUD is a text interface where you type commands and receive textual descriptions of a world with state, actors, and emergent behavior. You issue `look` and get a room description. You issue `attack goblin` and combat unfolds. The world exists whether you're watching or not.
+For those who missed that era: A MUD is a text interface where you type commands and receive textual descriptions of a world with state, actors, and emergent behaviour. You issue `look` and get a room description. You issue `attack goblin` and combat unfolds. The world exists whether you're watching or not.
 
 Gas Town works surprisingly similarly. The verbs are different—`gt sling`, `gt seance`, `gt nudge`, `gt handoff`—but the interaction model is almost identical. You're issuing commands into a persistent world populated by autonomous actors (Yegge's "polecats," "witnesses," "refineries") that continue operating when you look away.
 
