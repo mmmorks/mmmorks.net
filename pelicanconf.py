@@ -47,4 +47,4 @@ MARKDOWN = {
 
 # Plugins
 PLUGIN_PATHS = ["/Users/john/Code/pelican-plugins"]
-PLUGINS = ["extract_toc"]
+PLUGINS = ["extract_toc", "post_stats"]
