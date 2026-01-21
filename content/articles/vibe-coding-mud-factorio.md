@@ -66,7 +66,7 @@ What I think we're seeing is an emergent genre that doesn't have a good name yet
 
 6. **Corruption spreads through the system.** Yegge calls them "heresies" -- wrong guesses that agents make about how things work, which get enshrined in code and propagate to other agents. Like a Factorio factory that starts producing the wrong intermediate product, or a MUD where a false rumor becomes canonical lore, bad patterns infect your invisible codebase and have to be "sniffed out and eradicated."
 
-## The Skill Transfer Question
+## Who Will Be Good At This?
 
 If this genre is real, then the people who will be *best* at agentic orchestration might not be the best traditional programmers. They might be:
 
@@ -82,7 +82,7 @@ This might explain why some senior engineers struggle with vibe coding while som
 
 You might worry this sounds like embracing sloppiness. But most commercial software development has *always* been a best-effort, we'll-fix-it-later endeavor. We've always shipped with bugs. The question has always been: how close is it? How good are your tests? Vibe coding isn't introducing sloppiness to a previously pristine craft -- it's making explicit what was always implicit. The difference is scale and velocity.
 
-## The Dark Pattern: Addiction Loops
+## The Addictive Loop
 
 If the FactorioMUD analogy holds, though, there's a darker parallel worth examining.
 
@@ -107,6 +107,8 @@ The implications:
 **For everyone:** Pay attention to the addiction mechanics. If you find yourself unable to stop watching the activity feed, that's not a feature -- that's a bug in your relationship to the tool.
 
 ---
+
+## A Warfare Parallel
 
 There's a parallel here that keeps nagging at me: modern warfare.
 
