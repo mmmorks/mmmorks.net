@@ -1,11 +1,11 @@
 ---
 # mmmorks.net-tpu6
 title: Commit blog post edits and improvements
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-01-20T03:13:15Z
-updated_at: 2026-01-21T02:03:08Z
+updated_at: 2026-01-21T02:03:58Z
 ---
 
 Commit the modified files that contain blog post improvements.

@@ -1,10 +1,11 @@
 ---
 # mmmorks.net-k1qp
 title: Publish 'Vibe Coding is a MUD Version of Factorio' blog post
-status: todo
+status: completed
 type: epic
+priority: normal
 created_at: 2026-01-20T23:46:28Z
-updated_at: 2026-01-20T23:46:28Z
+updated_at: 2026-01-21T02:04:04Z
 ---
 
 Complete and publish the blog post analyzing Gas Town and vibe coding through the lens of MUD-Factorio paradigm.
