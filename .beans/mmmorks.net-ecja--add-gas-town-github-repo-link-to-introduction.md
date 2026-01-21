@@ -1,10 +1,11 @@
 ---
 # mmmorks.net-ecja
 title: Add Gas Town GitHub repo link to introduction
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-01-20T23:58:02Z
-updated_at: 2026-01-20T23:58:02Z
+updated_at: 2026-01-21T00:33:56Z
 parent: mmmorks.net-k1qp
 ---
 
