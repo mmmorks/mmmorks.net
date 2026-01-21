@@ -1,5 +1,5 @@
 Title: Vibe Coding is a MUD Version of Factorio
-Date: 2025-01-20
+Date: 2026-01-20
 Category: Articles
 Tags: ai, software-development, vibe-coding, agents
 Slug: vibe-coding-mud-factorio
@@ -21,22 +21,22 @@ For those who missed that era: A MUD is a text interface where you type commands
 
 Gas Town works surprisingly similarly. The verbs are different—`gt sling`, `gt seance`, `gt nudge`, `gt handoff`—but the interaction model is almost identical. You're issuing commands into a persistent world populated by autonomous actors (Yegge's "polecats," "witnesses," "refineries") that continue operating when you look away.
 
-The feedback loop is pure MUD: command, textual confirmation of state change, wait, check the activity feed to see what happened while you were away. Yegge's tmux UI is basically a split-screen MUD client showing multiple "rooms" (sessions) at once. The naming conventions reinforce this—Polecats, the Refinery, the Witness, the Deacon, Dogs. These aren't abstractions. They're *characters* in a world—like the Drunk, the Poisoner, and the Baron in Blood on the Clocktower, each with their own quirks and roles. You're playing a game where your party is made up of NPCs—each belonging to a distinct character class with persistent identities—and you're issuing them quests (molecules).
+The feedback loop is pure MUD: command, textual confirmation of state change, wait, check the activity feed to see what happened while you were away. Yegge's tmux UI is basically a split-screen MUD client showing multiple "rooms" (sessions) at once. The naming conventions reinforce this—Polecats, the Refinery, the Witness, the Deacon, Dogs. These aren't abstractions. They're *characters* in a world—like the Drunk, the Poisoner, and the Baron in Blood on the Clocktower, each with their own quirks and roles. You're playing a game where your party is made up of NPCs, each belonging to a distinct character class with persistent identities, and you're issuing them quests (molecules).
 
-The key difference: **you don't actually look at the code.** Just like in a MUD, you don't get to peek behind the curtain and inspect the room data structures directly. Your entire interaction with the codebase is mediated through the agent windows. The "world" is the code, but you only perceive it through what your agents report back. You issue commands, you read their responses, you check status dashboards—but you're not opening files in an editor to see what they actually did. In true agentic development, the code is as invisible to you as the MUD server's memory was. Your reality is constructed entirely from text that agents feed you.
+The key difference: **you don't actually look at the code.** Just like in a MUD, you don't get to peek behind the curtain and inspect the room data structures directly. Your entire interaction with the codebase is mediated through agent windows—you issue commands, read their responses, check status dashboards. The code is as invisible to you as the MUD server's memory was. Your reality is constructed entirely from text that agents feed you.
 
 ## The Factorio Layer
 
-In Factorio, you don't craft iron plates by hand (after the first few minutes)—you lay down miners, furnaces, and belts, and let the factory run.
+In Factorio, you don't craft iron plates by hand (after the first few minutes)—you lay down miners, furnaces, and belts, and let the factory run. It's the same mindset as SimCity or RollerCoaster Tycoon: you're designing systems, not executing individual actions.
 
 Gas Town is exactly this. You're not writing code. You're:
 
 1. **Designing protomolecules**—these are like blueprint books in Factorio. Pre-configured workflow templates you can stamp down.
-2. **Cooking formulas**—literally a macro expansion phase, like Factorio's circuit network logic.
+2. **Cooking formulas**—a macro expansion phase, similar to Factorio's circuit network logic.
 3. **Slinging convoys**—this is placing a factory module and letting inserters do the work.
 4. **Watching dashboards**—the Charmbracelet TUI with expanding trees is your Factorio production graph.
 
-The **Refinery** is literally the bottleneck manager—the equivalent of the one belt that everything has to merge through before hitting the main bus. Merge Queue problems are *throughput problems*, not logic problems.
+The **Refinery** is the bottleneck manager—the equivalent of the one belt that everything has to merge through before hitting the main bus. Merge Queue problems are *throughput problems*, not logic problems.
 
 Yegge describes work as "an uncountable substance that you sling around freely, like slopping shiny fish into wooden barrels at the docks. Most work gets done; some work gets lost." This is Factorio thinking. You don't care about individual iron plates. You care about iron plates *per minute*. Throughput over correctness-per-item.
 
@@ -44,9 +44,9 @@ And crucially: **don't watch your agents work.** Yegge's advice is explicit—gi
 
 Yegge himself validates this framing explicitly: "coding agent shops are going to wake up, realize that they have built workers when I've built a factory." This isn't just my interpretation—it's his articulation of the fundamental difference. Workers execute tasks. Factories process throughput. The distinction is architectural, not incremental.
 
-The real-world evidence is already emerging. Ajit and Ryan, two ex-Amazon devs using coding agents, moved so fast their teammates couldn't keep up. "2 hours ago!? That's ancient!" became an actual complaint. They had to develop explicit rules: "everything you do has to be 100% transparent and announced, all the time." This is what throughput-over-correctness looks like in practice—you move so fast that *transparency becomes the bottleneck*, not code quality.
+Yegge reports real-world evidence already emerging: Ajit and Ryan, two ex-Amazon devs using coding agents, moved so fast their teammates couldn't keep up. "2 hours ago!? That's ancient!" became an actual complaint. They had to develop explicit rules: "everything you do has to be 100% transparent and announced, all the time." This is what throughput-over-correctness looks like in practice—you move so fast that *transparency becomes the bottleneck*, not code quality.
 
-As Brendan Hopper put it: "when work needs to be done, nature prefers colonies. Nature builds ant colonies, while Claude Code is the world's biggest fuckin' ant." The metaphor isn't about making one worker smarter—it's about deploying many workers in coordination.
+As Brendan Hopper observed in Yegge's follow-up article: "when work needs to be done, nature prefers colonies. Nature builds ant colonies, while Claude Code is the world's biggest fuckin' ant." The metaphor isn't about making one worker smarter—it's about deploying many workers in coordination.
 
 ## The Synthesis: FactorioMUD as Genre
 
@@ -80,17 +80,17 @@ The skill isn't "coding" in the traditional sense. It's **workflow architecture*
 
 This might explain why some senior engineers struggle with vibe coding while some less-experienced developers take to it naturally. If you've spent 20 years optimizing your ability to write precise, correct code, the "slop fish into barrels" mentality feels wrong. But if you grew up on automation games where the whole point is building systems that run without you, the mental model transfers directly.
 
-You might worry this sounds like embracing sloppiness. But programming has *always* been a best-effort, we'll-fix-shit-later endeavor. We've always shipped with bugs. The question has always been: how close is it? How good are your tests? Vibe coding isn't introducing sloppiness to a previously pristine craft—it's making explicit what was always implicit. The difference is scale and velocity.
+You might worry this sounds like embracing sloppiness. But most commercial software development has *always* been a best-effort, we'll-fix-it-later endeavor. We've always shipped with bugs. The question has always been: how close is it? How good are your tests? Vibe coding isn't introducing sloppiness to a previously pristine craft—it's making explicit what was always implicit. The difference is scale and velocity.
 
 ## The Dark Pattern: Addiction Loops
 
 If the FactorioMUD analogy holds, though, there's a darker parallel worth examining.
 
-One thing both Factorio and MUDs are notorious for is *addiction*. The "one more turn" / "one more belt" / "one more quest" loop.
+One thing both Factorio and MUDs are notorious for is *addiction*. The "one more belt" / "one more quest" / "just check the activity feed" loop.
 
 Gas Town seems primed for this. The activity feed is a dopamine drip. Convoys landing is XP. Yegge himself describes cycling through workers to check their results: "Then we get to the fun part. You get to see where all your slot machines landed." The constant need to "keep feeding the engine" means you never feel *done*. Yegge's line about needing a third Claude Code account by end of week isn't just about cost—it's about the *compulsion* to keep the factory running.
 
-This might be the real reason Gas Town "is not safe" for most people. It's not just that the chimps can wreck your shit. It's that the *game* can wreck your life.
+This might be the real reason Gas Town "is not safe" for most people. It's not just that autonomous agents can wreck your codebase. It's that the *game* can wreck your life.
 
 ## What This Means
 
