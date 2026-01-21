@@ -31,3 +31,20 @@ DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
+
+# Markdown extensions
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.toc': {
+            'toc_depth': 2,
+        },
+        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.extra': {},
+        'markdown.extensions.meta': {},
+    },
+    'output_format': 'html5',
+}
+
+# Plugins
+PLUGIN_PATHS = ["/Users/john/Code/pelican-plugins"]
+PLUGINS = ["extract_toc"]
