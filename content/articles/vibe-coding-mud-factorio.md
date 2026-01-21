@@ -48,11 +48,11 @@ The real-world evidence is already emerging. Ajit and Ryan, two ex-Amazon devs u
 
 As Brendan Hopper put it: "when work needs to be done, nature prefers colonies. Nature builds ant colonies, while Claude Code is the world's biggest fuckin' ant." The metaphor isn't about making one worker smarter—it's about deploying many workers in coordination.
 
-## The Synthesis: MUD-Factorio as Genre
+## The Synthesis: FactorioMUD as Genre
 
 What I think we're seeing is an emergent genre that doesn't have a good name yet.
 
-**MUD-Factorio** (or maybe "Text-Factory"?) has these properties:
+**FactorioMUD** (or maybe "Code Tycoon"?) has these properties:
 
 1. **Declarative intent, emergent execution.** You describe what you want (design molecule, sling convoy, lay out mining outpost) and autonomous agents figure out the how. You observe outcomes, not processes.
 
@@ -84,7 +84,7 @@ You might worry this sounds like embracing sloppiness. But programming has *alwa
 
 ## The Dark Pattern: Addiction Loops
 
-If the MUD-Factorio analogy holds, though, there's a darker parallel worth examining.
+If the FactorioMUD analogy holds, though, there's a darker parallel worth examining.
 
 One thing both Factorio and MUDs are notorious for is *addiction*. The "one more turn" / "one more belt" / "one more quest" loop.
 
@@ -94,7 +94,7 @@ This might be the real reason Gas Town "is not safe" for most people. It's not j
 
 ## What This Means
 
-I don't think Gas Town specifically will be how we all code in two years. Yegge himself says it might not live longer than 12 months. But the *paradigm*—the MUD-Factorio genre—feels like a genuine discovery about how humans can effectively direct swarms of AI agents.
+I don't think Gas Town specifically will be how we all code in two years. Yegge himself says it might not live longer than 12 months. But the *paradigm*—the FactorioMUD genre—feels like a genuine discovery about how humans can effectively direct swarms of AI agents.
 
 Unlike Lamport's Paxos paper, where the Greek parliament narrative obscured the algorithm for two decades, Yegge's MUD aesthetic seems to illuminate rather than obscure. The metaphor isn't decoration—it captures something essential about the interaction model that a dry technical description would miss.
 
