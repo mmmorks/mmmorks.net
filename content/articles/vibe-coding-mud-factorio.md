@@ -3,13 +3,11 @@ Date: 2025-01-20
 Category: Articles
 Tags: ai, software-development, vibe-coding, agents
 Slug: vibe-coding-mud-factorio
-Summary: The emerging paradigm of agentic coding tools like Gas Town isn't just "AI-assisted development"—it's an entirely new genre of interaction. Think SimCity meets Factorio, but you're playing it through a text adventure interface.
+Summary: The emerging paradigm of agentic coding tools like Gas Town represents an entirely new genre of interaction—think Factorio played through a text adventure interface.
 
 Steve Yegge [announced](https://steve-yegge.medium.com/welcome-to-gas-town-4f25ee16dd04) his [Gas Town project](https://github.com/steveyegge/gastown) on New Year's Day 2026, and reading through its 25 pages of mad-scientist documentation, I kept circling back to an analogy that felt more right the longer I sat with it:
 
-**Vibe coding is a MUD version of SimCity or Factorio.**
-
-Not metaphorically. Structurally.
+**Vibe coding is a MUD version of Factorio.**
 
 (There's a risk here, by the way—wrapping technical insights in playful narrative can backfire spectacularly. Leslie Lamport's "The Part-Time Parliament" paper introduced the Paxos algorithm through such an obtuse fictional Greek parliament story that it took two decades before anyone understood or used it. Yegge's betting the opposite: that the MUD aesthetic *illuminates* rather than obscures. We'll see.)
 
@@ -23,13 +21,13 @@ For those who missed that era: A MUD is a text interface where you type commands
 
 Gas Town works surprisingly similarly. The verbs are different—`gt sling`, `gt seance`, `gt nudge`, `gt handoff`—but the interaction model is almost identical. You're issuing commands into a persistent world populated by autonomous actors (Yegge's "polecats," "witnesses," "refineries") that continue operating when you look away.
 
-The feedback loop is pure MUD: command, textual confirmation of state change, wait, check the activity feed to see what happened while you were away. Yegge's tmux UI is basically a split-screen MUD client showing multiple "rooms" (sessions) at once. The naming conventions reinforce this—Polecats, the Refinery, the Witness, the Deacon, Dogs. These aren't abstractions. They're *characters* in a world—like the Drunk, the Poisoner, and the Baron in Blood on the Clocktower, each with their own quirks and roles. You're playing a game where your party members are superintelligent chimps with persistent identities, and you're issuing them quests (molecules).
+The feedback loop is pure MUD: command, textual confirmation of state change, wait, check the activity feed to see what happened while you were away. Yegge's tmux UI is basically a split-screen MUD client showing multiple "rooms" (sessions) at once. The naming conventions reinforce this—Polecats, the Refinery, the Witness, the Deacon, Dogs. These aren't abstractions. They're *characters* in a world—like the Drunk, the Poisoner, and the Baron in Blood on the Clocktower, each with their own quirks and roles. You're playing a game where your party is made up of NPCs—each belonging to a distinct character class with persistent identities—and you're issuing them quests (molecules).
 
-And here's the crucial part: **you don't actually look at the code.** Just like in a MUD, you don't get to peek behind the curtain and inspect the room data structures directly. Your entire interaction with the codebase is mediated through the agent windows. The "world" is the code, but you only perceive it through what your agents report back. You issue commands, you read their responses, you check status dashboards—but you're not opening files in an editor to see what they actually did. In true agentic development, the code is as invisible to you as the MUD server's memory was. Your reality is constructed entirely from text that agents feed you.
+The key difference: **you don't actually look at the code.** Just like in a MUD, you don't get to peek behind the curtain and inspect the room data structures directly. Your entire interaction with the codebase is mediated through the agent windows. The "world" is the code, but you only perceive it through what your agents report back. You issue commands, you read their responses, you check status dashboards—but you're not opening files in an editor to see what they actually did. In true agentic development, the code is as invisible to you as the MUD server's memory was. Your reality is constructed entirely from text that agents feed you.
 
-## The SimCity/Factorio Layer
+## The Factorio Layer
 
-Here's where it gets interesting. In SimCity, you don't build houses—you zone residential and the simulation populates it. In Factorio, you don't craft iron plates by hand (after the first few minutes)—you lay down miners, furnaces, and belts, and let the factory run.
+In Factorio, you don't craft iron plates by hand (after the first few minutes)—you lay down miners, furnaces, and belts, and let the factory run.
 
 Gas Town is exactly this. You're not writing code. You're:
 
@@ -52,11 +50,11 @@ As Brendan Hopper put it: "when work needs to be done, nature prefers colonies. 
 
 ## The Synthesis: MUD-Factorio as Genre
 
-What I think we're seeing is an emergent genre that doesn't have a good name yet. Let me try to characterize it:
+What I think we're seeing is an emergent genre that doesn't have a good name yet.
 
 **MUD-Factorio** (or maybe "Text-Factory"?) has these properties:
 
-1. **Declarative intent, emergent execution.** You describe what you want (zone residential, design molecule, sling convoy) and autonomous agents figure out the how. You observe outcomes, not processes.
+1. **Declarative intent, emergent execution.** You describe what you want (design molecule, sling convoy, lay out mining outpost) and autonomous agents figure out the how. You observe outcomes, not processes.
 
 2. **Text as primary interface to complex state.** You can't see the factory floor—and in true agentic development, you don't look at the code directly either. Your entire perception of the system comes through agent reports, activity feeds, status lines, and dashboard summaries. Like a MUD where you never see the actual room data structures, the codebase exists "behind the curtain" while you interact with it purely through textual descriptions. Yegge calls this "tending the invisible garden"—you do regular sweeps (code review, then bug fixes, then more code review), hoping that most of the time you don't find anything bad. The only way to be sure is to keep doing it.
 
@@ -82,9 +80,11 @@ The skill isn't "coding" in the traditional sense. It's **workflow architecture*
 
 This might explain why some senior engineers struggle with vibe coding while some less-experienced developers take to it naturally. If you've spent 20 years optimizing your ability to write precise, correct code, the "slop fish into barrels" mentality feels wrong. But if you grew up on automation games where the whole point is building systems that run without you, the mental model transfers directly.
 
-Here's the thing, though: programming has *always* been a best-effort, we'll-fix-shit-later endeavor. We've always shipped with bugs. The question has always been: how close is it? How good are your tests? Vibe coding isn't introducing sloppiness to a previously pristine craft—it's making explicit what was always implicit. The difference is scale and velocity.
+You might worry this sounds like embracing sloppiness. But programming has *always* been a best-effort, we'll-fix-shit-later endeavor. We've always shipped with bugs. The question has always been: how close is it? How good are your tests? Vibe coding isn't introducing sloppiness to a previously pristine craft—it's making explicit what was always implicit. The difference is scale and velocity.
 
 ## The Dark Pattern: Addiction Loops
+
+If the MUD-Factorio analogy holds, though, there's a darker parallel worth examining.
 
 One thing both Factorio and MUDs are notorious for is *addiction*. The "one more turn" / "one more belt" / "one more quest" loop.
 
@@ -95,6 +95,8 @@ This might be the real reason Gas Town "is not safe" for most people. It's not j
 ## What This Means
 
 I don't think Gas Town specifically will be how we all code in two years. Yegge himself says it might not live longer than 12 months. But the *paradigm*—the MUD-Factorio genre—feels like a genuine discovery about how humans can effectively direct swarms of AI agents.
+
+Unlike Lamport's Paxos paper, where the Greek parliament narrative obscured the algorithm for two decades, Yegge's MUD aesthetic seems to illuminate rather than obscure. The metaphor isn't decoration—it captures something essential about the interaction model that a dry technical description would miss.
 
 The implications:
 
