@@ -9,6 +9,7 @@ CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
 
 S3_BUCKET=mmmorks-net-website-customresourcesta-s3bucketroot-ujjrhsqcdlsp
+CLOUDFRONT_DISTRIBUTION=E1E2AB2CCOLUJJ
 
 
 DEBUG ?= 0
@@ -42,6 +43,8 @@ help:
 	@echo '   make devserver [PORT=8000]          serve and regenerate together      '
 	@echo '   make devserver-global               regenerate and serve on 0.0.0.0    '
 	@echo '   make s3_upload                      upload the web site via S3         '
+	@echo '   make cloudfront_invalidate          invalidate CloudFront cache        '
+	@echo '   make s3_publish                     build, upload to S3, and invalidate'
 	@echo '                                                                          '
 	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html   '
 	@echo 'Set the RELATIVE variable to 1 to enable relative urls                    '
@@ -74,5 +77,10 @@ publish:
 s3_upload: publish
 	aws --profile s3-publish s3 sync "$(OUTPUTDIR)"/ s3://$(S3_BUCKET) --delete
 
+cloudfront_invalidate:
+	aws --profile s3-publish cloudfront create-invalidation --distribution-id $(CLOUDFRONT_DISTRIBUTION) --paths "/*"
 
-.PHONY: html help clean regenerate serve serve-global devserver devserver-global publish s3_upload
+s3_publish: s3_upload cloudfront_invalidate
+
+
+.PHONY: html help clean regenerate serve serve-global devserver devserver-global publish s3_upload cloudfront_invalidate s3_publish
