@@ -9,6 +9,16 @@ This document captures the stylistic conventions and editorial standards for con
 - BUT: Use `-ize/-yze` suffixes instead of `-ise/-yse` (realize, analyze, organize, etc.)
 - Examples: "realise" → "realize" ✓, "behavior" → "behaviour" ✓
 
+**Use double dashes with spaces, not em dashes:**
+- Format: ` -- ` (spaces on both sides)
+- Only use where commas would be less effective
+- Good for: strong contrasts, introducing examples, defining terms, sharp topic shifts
+- Use commas for: gentle asides, natural pauses
+- Examples:
+  - "your codebase -- but the *game* can wreck your life" ✓ (strong contrast)
+  - "by the way, wrapping technical insights" ✓ (gentle aside uses comma)
+  - "Multi-User Dungeons -- those text-based virtual worlds" ✓ (defining/appositive)
+
 ## Voice and Tone
 
 ### Be Human, Not Corporate
@@ -203,6 +213,7 @@ Before marking editorial work complete, verify:
 - [ ] All quotes are accurate and attributed
 - [ ] Technical details are fact-checked
 - [ ] Oxford English Spelling is used consistently
+- [ ] Double dashes (` -- `) used instead of em dashes, with spaces on both sides
 - [ ] Pacing is balanced throughout (not front-loaded)
 - [ ] Sentence structure varies naturally
 - [ ] The conclusion ties threads together effectively
