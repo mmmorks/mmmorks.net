@@ -110,4 +110,26 @@ The implications:
 
 ---
 
-The factory must grow. But you get to decide if you're running the factory, or if the factory is running you.
+There's a parallel here that keeps nagging at me: modern warfare.
+
+Over the past decade, drone operators have become some of the most effective combatants in contemporary conflicts. And the skills that make a good drone pilot turn out to be... not what you'd expect. Not the physical conditioning of special forces, not years of flight school, but pattern recognition, situational awareness from multiple screens, comfort with controller interfaces. The US military has reportedly found success recruiting from gaming communities. The skills of an FPS player—tracking multiple targets, making split-second decisions from abstracted representations of reality—transfer better to drone warfare than traditional combat training.
+
+Is something similar happening to software development?
+
+The argument of this essay, if I'm being honest with myself, isn't just that Factorio skills *help* with vibe coding. It's a more uncomfortable suggestion: that the skills which made someone a great traditional programmer—meticulous attention to syntax, deep knowledge of language internals, the ability to hold complex state in your head and manipulate it precisely—might matter less than the ability to think in systems, manage throughput, and stay comfortable when you can't see what's actually happening.
+
+There's another gaming skill that might matter even more: reading the meta.
+
+In competitive games, the "meta" is the current landscape of optimal strategies—what works, what counters what, what's fallen out of favour. It shifts constantly as patches land, new techniques emerge, and counter-strategies develop. The players who succeed long-term aren't those who perfect one approach and stick with it. They're the ones who sense when the meta is shifting and adapt before everyone else catches on.
+
+The AI tooling landscape has this quality. What's optimal today—the specific agents, workflows, prompt patterns—might be obsolete in six months. Gas Town itself might not outlive the year. The skill isn't mastering *this* tool; it's developing intuition for how the whole space is evolving and repositioning accordingly. That's not a traditional engineering skill. It's a competitive gaming skill.
+
+If all this is true, we might be watching a shift as dramatic as the one from cavalry to tanks, or from dogfighting to drones. Not a gradual evolution where old skills remain valuable, but a genuine discontinuity where the new masters come from unexpected places.
+
+But here's the uncomfortable flip side: if the interface is a game, it inherits gaming's darker patterns too. The same Factorio instincts that help you think in throughput also make you susceptible to "one more belt." The same competitive drive that helps you read the meta keeps you grinding when you should step away. The people most naturally suited to this paradigm might also be the most vulnerable to its compulsive loops—the activity feed as endless dopamine drip, convoys landing like slot machine payouts.
+
+I don't know if any of this is right. The parallels might be too cute—warfare and software development are different in fundamental ways, and the gaming comparisons could be misleading us. Traditional programming skills surely still matter *somewhere* in the stack. Someone has to build the agents, train the models, debug the infrastructure.
+
+But the question feels worth asking: In five years, will the best "developers" be people who never learned to program in the traditional sense—but who know how to read a meta, think in throughput, and manage systems they can't directly see?
+
+The factory must grow. But you still get to decide whether you're running it, or whether it's running you.
