@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """Generate stork.toml configuration from output HTML files."""
-import os
 from pathlib import Path
 from html.parser import HTMLParser
 
@@ -49,12 +48,13 @@ def generate_stork_config(output_dir='output'):
         if html_file.name not in exclude_patterns:
             html_files.append(html_file)
 
-    # Generate TOML content
+    # Generate TOML content - use "/" for root-relative URLs that work everywhere
     toml_content = ['[input]', 'base_directory = "output"', 'url_prefix = "/"', '']
 
     for html_file in sorted(html_files):
         title = get_title_from_html(html_file)
-        url = f"/{html_file.name}" if html_file.name != "index.html" else "/"
+        # Don't include leading slash since url_prefix already has it
+        url = html_file.name if html_file.name != "index.html" else ""
 
         toml_content.extend([
             '[[input.files]]',
