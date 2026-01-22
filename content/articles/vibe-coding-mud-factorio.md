@@ -46,7 +46,7 @@ Yegge himself validates this framing explicitly: "coding agent shops are going t
 
 Yegge cites an early example: Ajit and Ryan, two ex-Amazon devs using coding agents, moved so fast their teammates couldn't keep up. "2 hours ago!? That's ancient!" became an actual complaint. They had to develop explicit rules: "everything you do has to be 100% transparent and announced, all the time." This is what throughput-over-correctness looks like in practice -- you move so fast that *transparency becomes the bottleneck*, not code quality.
 
-As Brendan Hopper told Yegge in his [follow-up article](https://steve-yegge.medium.com/the-future-of-coding-agents-e9451a84207c): "when work needs to be done, nature prefers colonies. Nature builds ant colonies, while Claude Code is the world's biggest fuckin' ant." The metaphor isn't about making one worker smarter -- it's about deploying many workers in coordination.
+As Brendan Hopper told Yegge in his [follow-up article](https://steve-yegge.medium.com/the-future-of-coding-agents-e9451a84207c): "when work needs to be done, nature prefers colonies. Nature builds ant colonies, while Claude Code is the world's biggest fuckin' ant." The metaphor emphasizes deploying many workers in coordination, not making one worker smarter.
 
 ## The Synthesis: FactorioMUD as Genre
 
@@ -80,7 +80,7 @@ The skill isn't "coding" in the traditional sense. It's **workflow architecture*
 
 This might explain why some senior engineers struggle with vibe coding while some less-experienced developers take to it naturally. If you've spent 20 years optimizing your ability to write precise, correct code, the "slop fish into barrels" mentality feels wrong. But if you grew up on automation games where the whole point is building systems that run without you, the mental model transfers directly.
 
-You might worry this sounds like embracing sloppiness. But most commercial software development has *always* been a best-effort, we'll-fix-it-later endeavor. We've always shipped with bugs. The question has always been: how close is it? How good are your tests? Vibe coding isn't introducing sloppiness to a previously pristine craft -- it's making explicit what was always implicit. The difference is scale and velocity.
+You might worry this sounds like embracing sloppiness. But most commercial software development has *always* been a best-effort, we'll-fix-it-later endeavor. We've always shipped with bugs. The question has always been: how close is it? How good are your tests? Vibe coding makes explicit what was always implicit in the craft. The difference is scale and velocity.
 
 ## The Addictive Loop
 
@@ -122,9 +122,9 @@ There's another gaming skill that might matter even more: reading the meta.
 
 In competitive games, the "meta" is the current landscape of optimal strategies -- what works, what counters what, what's fallen out of favour. It shifts constantly as patches land, new techniques emerge, and counter-strategies develop. The players who succeed long-term aren't those who perfect one approach and stick with it. They're the ones who sense when the meta is shifting and adapt before everyone else catches on.
 
-The AI tooling landscape has this quality. What's optimal today -- the specific agents, workflows, prompt patterns -- might be obsolete in six months. Gas Town itself might not outlive the year. The skill isn't mastering *this* tool; it's developing intuition for how the whole space is evolving and repositioning accordingly. That's not a traditional engineering skill. It's a competitive gaming skill.
+The AI tooling landscape has this quality. What's optimal today -- the specific agents, workflows, prompt patterns -- might be obsolete in six months. Gas Town itself might not outlive the year. The skill isn't mastering *this* tool; it's developing intuition for how the whole space is evolving and repositioning accordingly. That's a competitive gaming skill, not a traditional engineering one.
 
-If all this is true, we might be watching a shift as dramatic as the one from cavalry to tanks, or from dogfighting to drones. Not a gradual evolution where old skills remain valuable, but a genuine discontinuity where the new masters come from unexpected places.
+If all this is true, we might be watching a shift as dramatic as the one from cavalry to tanks, or from dogfighting to drones. A genuine discontinuity where the new masters come from unexpected places, rather than a gradual evolution that preserves old skills.
 
 But here's the uncomfortable flip side: if the interface is a game, it inherits gaming's darker patterns too. The same Factorio instincts that help you think in throughput also make you susceptible to "one more belt." The same competitive drive that helps you read the meta keeps you grinding when you should step away. The people most naturally suited to this paradigm might also be the most vulnerable to its compulsive loops -- the activity feed as endless dopamine drip, convoys landing like slot machine payouts.
 
