@@ -32,6 +32,8 @@ DEFAULT_PAGINATION = False
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
+COMMENTBOX_PROJECT = '5746575435366400-proj'
+
 # Markdown extensions
 MARKDOWN = {
     'extension_configs': {
