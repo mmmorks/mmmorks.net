@@ -3,4 +3,5 @@ output
 .DS_Store
 convos/
 sources/
+stork.toml
 

@@ -35,6 +35,7 @@ help:
 	@echo '                                                                          '
 	@echo 'Usage:                                                                    '
 	@echo '   make html                           (re)generate the web site          '
+	@echo '   make stork                          build the search index             '
 	@echo '   make clean                          remove the generated files         '
 	@echo '   make regenerate                     regenerate files upon modification '
 	@echo '   make publish                        generate using production settings '
@@ -52,6 +53,11 @@ help:
 
 html:
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
+	$(MAKE) stork
+
+stork:
+	python3 generate_stork_config.py
+	stork build --input stork.toml --output "$(OUTPUTDIR)"/search-index.st
 
 clean:
 	[ ! -d "$(OUTPUTDIR)" ] || rm -rf "$(OUTPUTDIR)"
@@ -73,6 +79,7 @@ devserver-global:
 
 publish:
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
+	$(MAKE) stork
 
 s3_upload: publish
 	aws --profile s3-publish s3 sync "$(OUTPUTDIR)"/ s3://$(S3_BUCKET) --delete
@@ -83,4 +90,4 @@ cloudfront_invalidate:
 s3_publish: s3_upload cloudfront_invalidate
 
 
-.PHONY: html help clean regenerate serve serve-global devserver devserver-global publish s3_upload cloudfront_invalidate s3_publish
+.PHONY: html help clean regenerate serve serve-global devserver devserver-global publish stork s3_upload cloudfront_invalidate s3_publish
