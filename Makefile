@@ -66,6 +66,8 @@ regenerate:
 	"$(PELICAN)" -r "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
 
 serve:
+	@PORT_NUM=$$(if [ "$(PORT)" = "0" ]; then echo 8000; else echo $(PORT); fi); \
+	(sleep 1 && open http://localhost:$$PORT_NUM) & \
 	"$(PELICAN)" -l "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(CONFFILE)" $(PELICANOPTS)
 
 serve-global:
