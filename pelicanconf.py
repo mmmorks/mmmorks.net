@@ -48,5 +48,6 @@ MARKDOWN = {
 }
 
 # Plugins
-PLUGIN_PATHS = ["/Users/john/Code/pelican-plugins"]
+import os
+PLUGIN_PATHS = [os.path.join(os.path.dirname(__file__), "..", "pelican-plugins")]
 PLUGINS = ["extract_toc", "post_stats"]
