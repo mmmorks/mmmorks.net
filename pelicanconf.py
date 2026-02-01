@@ -51,3 +51,9 @@ MARKDOWN = {
 import os
 PLUGIN_PATHS = [os.path.join(os.path.dirname(__file__), "..", "pelican-plugins")]
 PLUGINS = ["extract_toc", "post_stats"]
+
+# Static files
+STATIC_PATHS = ['images', 'extras']
+EXTRA_PATH_METADATA = {
+    'extras/robots.txt': {'path': 'robots.txt'},
+}

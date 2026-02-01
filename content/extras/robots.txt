@@ -1,0 +1,24 @@
+# Robots.txt for mmmorks.net
+
+User-agent: *
+
+# Exclude theme assets (CSS, JS, fonts)
+Disallow: /theme/
+
+# Exclude feed files (duplicate content)
+Disallow: /feeds/
+
+# Exclude draft content
+Disallow: /drafts/
+
+# Exclude taxonomy/meta pages (low value for search)
+Disallow: /author/
+Disallow: /authors.html
+Disallow: /category/
+Disallow: /categories.html
+Disallow: /tag/
+Disallow: /tags.html
+Disallow: /archives.html
+
+# Exclude search index binary
+Disallow: /search-index.st
