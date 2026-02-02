@@ -43,9 +43,10 @@ help:
 	@echo '   make serve-global [SERVER=0.0.0.0]  serve (as root) to $(SERVER):80    '
 	@echo '   make devserver [PORT=8000]          serve and regenerate together      '
 	@echo '   make devserver-global               regenerate and serve on 0.0.0.0    '
-	@echo '   make s3_upload                      upload the web site via S3         '
-	@echo '   make cloudfront_invalidate          invalidate CloudFront cache        '
-	@echo '   make s3_publish                     build, upload to S3, and invalidate'
+	@echo '   make s3_publish                     smart publish (only changed files)  '
+	@echo '   make s3_publish_dryrun              preview what would be published    '
+	@echo '   make s3_upload                      legacy: full s3 sync               '
+	@echo '   make cloudfront_invalidate          legacy: invalidate entire cache    '
 	@echo '                                                                          '
 	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html   '
 	@echo 'Set the RELATIVE variable to 1 to enable relative urls                    '
@@ -83,13 +84,25 @@ publish:
 	"$(PELICAN)" "$(INPUTDIR)" -o "$(OUTPUTDIR)" -s "$(PUBLISHCONF)" $(PELICANOPTS)
 	$(MAKE) stork
 
+s3_publish: publish
+	S3_BUCKET=$(S3_BUCKET) \
+	CLOUDFRONT_DISTRIBUTION=$(CLOUDFRONT_DISTRIBUTION) \
+	OUTPUT_DIR="$(OUTPUTDIR)" \
+	./scripts/content-aware-publish.sh
+
+s3_publish_dryrun: publish
+	S3_BUCKET=$(S3_BUCKET) \
+	CLOUDFRONT_DISTRIBUTION=$(CLOUDFRONT_DISTRIBUTION) \
+	OUTPUT_DIR="$(OUTPUTDIR)" \
+	DRY_RUN=true \
+	./scripts/content-aware-publish.sh
+
+# Legacy targets (full sync, invalidate everything)
 s3_upload: publish
 	aws --profile s3-publish s3 sync "$(OUTPUTDIR)"/ s3://$(S3_BUCKET) --delete
 
 cloudfront_invalidate:
 	aws --profile s3-publish cloudfront create-invalidation --distribution-id $(CLOUDFRONT_DISTRIBUTION) --paths "/*"
 
-s3_publish: s3_upload cloudfront_invalidate
 
-
-.PHONY: html help clean regenerate serve serve-global devserver devserver-global publish stork s3_upload cloudfront_invalidate s3_publish
+.PHONY: html help clean regenerate serve serve-global devserver devserver-global publish stork s3_upload cloudfront_invalidate s3_publish s3_publish_dryrun
