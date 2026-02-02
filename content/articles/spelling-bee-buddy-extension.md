@@ -1,7 +1,7 @@
 Title: Building a Cross-Browser Extension: NYT Spelling Bee Buddy Embedder
 Date: 2025-12-29
-Category: Web Development
-Tags: browser-extensions, javascript, firefox, chrome
+Category: Projects
+Tags: web-browsers
 Slug: spelling-bee-buddy-extension
 Summary: Creating a browser extension that embeds the NYT Spelling Bee Buddy directly into the game page.
 

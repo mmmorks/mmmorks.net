@@ -1,7 +1,7 @@
 Title: Vibe Coding is a MUD Version of Factorio
 Date: 2026-01-20
-Category: Articles
-Tags: ai, software-development, vibe-coding, agents
+Category: Essays
+Tags: ai, vibe-coding
 Slug: vibe-coding-mud-factorio
 Summary: The emerging paradigm of agentic coding tools like Gas Town represents an entirely new genre of interaction -- think Factorio played through a text adventure interface.
 
