@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Content-aware S3 publish with targeted CloudFront invalidation
 # Only uploads files that actually changed (by MD5/ETag comparison)
 
@@ -78,8 +78,11 @@ fi
 
 # Upload new and modified files
 if [ "$UPLOAD_COUNT" -gt 0 ]; then
-    echo "=== Uploading $UPLOAD_COUNT files ==="
-    echo "$TO_UPLOAD" | while read -r key; do
+    MAX_JOBS=3
+    echo "=== Uploading $UPLOAD_COUNT files (max $MAX_JOBS parallel) ==="
+    job_count=0
+
+    while read -r key; do
         local_path="$OUTPUT_DIR/$key"
         s3_path="s3://$BUCKET/$key"
 
@@ -106,11 +109,20 @@ if [ "$UPLOAD_COUNT" -gt 0 ]; then
             echo "[dry-run] upload: $key ($content_type)"
         else
             echo "upload: $key"
-            aws --profile "$PROFILE" s3 cp "$local_path" "$s3_path" \
-                --content-type "$content_type" \
-                --quiet
+            (
+                aws --profile "$PROFILE" s3 cp "$local_path" "$s3_path" \
+                    --content-type "$content_type" \
+                    --quiet
+            ) &
+
+            ((++job_count))
+            if [ "$job_count" -ge "$MAX_JOBS" ]; then
+                wait -n
+                ((--job_count))
+            fi
         fi
-    done
+    done <<< "$TO_UPLOAD"
+    wait
     echo ""
 fi
 
