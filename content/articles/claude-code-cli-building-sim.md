@@ -1,8 +1,8 @@
 Title: Claude Code is a CLI Building Sim
 Date: 2026-01-20
 Category: Essays
-Tags: ai, vibe-coding
-Slug: vibe-coding-terminal-tycoon
+Tags: ai, vibe-coding, gaming, claude-code
+Slug: claude-code-cli-building-sim
 Summary: The emerging paradigm of agentic coding tools represents an entirely new genre of interaction -- a building sim played through a text interface.
 
 Claude Code is Anthropic's agentic coding tool -- a CLI where you describe what you want in natural language, and an AI agent writes the code, runs commands, and iterates on the results. You don't write code directly. You issue intents into a terminal and watch an agent execute them.
