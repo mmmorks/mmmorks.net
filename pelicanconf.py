@@ -34,6 +34,8 @@ RELATIVE_URLS = True
 
 COMMENTBOX_PROJECT = '5746575435366400-proj'
 
+USE_SHORTCUT_ICONS = True
+
 # Markdown extensions
 MARKDOWN = {
     'extension_configs': {
