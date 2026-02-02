@@ -5,7 +5,7 @@ Tags: ai, vibe-coding, gaming
 Slug: vibe-coding-cavalry-to-drones
 Summary: If agentic coding is a new genre of interaction, who will master it? The answer might be closer to drone warfare than traditional software engineering.
 
-In my [previous essay](/claude-code-cli-building-sim), I argued that agentic coding tools like Claude Code represent an emergent genre -- Terminal Tycoon -- where the interaction model resembles MUDs and building sims more than traditional programming. You design systems, manage throughput, and observe outcomes through text, rather than writing code directly.
+In my [previous essay]({filename}/articles/claude-code-cli-building-sim.md), I argued that agentic coding tools like Claude Code represent an emergent genre -- Terminal Tycoon -- where the interaction model resembles MUDs and building sims more than traditional programming. You design systems, manage throughput, and observe outcomes through text, rather than writing code directly.
 
 But there's a parallel that kept nagging at me while writing that piece, one that felt too heavy for what was already a long essay: modern warfare.
 
