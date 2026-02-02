@@ -9,7 +9,7 @@ Claude Code is Anthropic's agentic coding tool -- a CLI where you describe what 
 
 This interaction feels different from other programming tools I've used. Not just faster or more convenient, but *categorically* different -- like the relationship between player and game has shifted.
 
-**Claude Code is a building sim.**
+**Claude Code is a CLI building sim.**
 
 Not metaphorically. The interaction model -- issuing declarative intents, watching autonomous agents execute, optimizing throughput over individual correctness -- is structurally identical to Factorio, SimCity, or RollerCoaster Tycoon. You're not writing code. You're tending a factory.
 
