@@ -88,14 +88,14 @@ s3_publish: publish
 	S3_BUCKET=$(S3_BUCKET) \
 	CLOUDFRONT_DISTRIBUTION=$(CLOUDFRONT_DISTRIBUTION) \
 	OUTPUT_DIR="$(OUTPUTDIR)" \
-	./scripts/content-aware-publish.sh
+	./scripts/content_aware_publish.py
 
 s3_publish_dryrun: publish
 	S3_BUCKET=$(S3_BUCKET) \
 	CLOUDFRONT_DISTRIBUTION=$(CLOUDFRONT_DISTRIBUTION) \
 	OUTPUT_DIR="$(OUTPUTDIR)" \
 	DRY_RUN=true \
-	./scripts/content-aware-publish.sh
+	./scripts/content_aware_publish.py
 
 # Legacy targets (full sync, invalidate everything)
 s3_upload: publish
