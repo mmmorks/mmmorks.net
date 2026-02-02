@@ -7,11 +7,13 @@ Summary: The emerging paradigm of agentic coding tools represents an entirely ne
 
 Claude Code is Anthropic's agentic coding tool -- a CLI where you describe what you want in natural language, and an AI agent writes the code, runs commands, and iterates on the results. You don't write code directly. You issue intents into a terminal and watch an agent execute them.
 
-Something about this interaction feels different from other programming tools I've used. Not just faster or more convenient, but *categorically* different -- like the relationship between player and game has shifted.
+This interaction feels different from other programming tools I've used. Not just faster or more convenient, but *categorically* different -- like the relationship between player and game has shifted.
 
-Steve Yegge noticed the same thing. On New Year's Day 2026, he [announced](https://steve-yegge.medium.com/welcome-to-gas-town-4f25ee16dd04) [Gas Town](https://github.com/steveyegge/gastown) -- an orchestration layer for running *multiple* Claude Code agents in parallel. As I read through its 25 pages of mad-scientist documentation, the framing clicked:
+**Claude Code is a building sim.**
 
-**Gas Town is a CLI building sim.**
+Not metaphorically. The interaction model -- issuing declarative intents, watching autonomous agents execute, optimizing throughput over individual correctness -- is structurally identical to Factorio, SimCity, or RollerCoaster Tycoon. You're not writing code. You're tending a factory.
+
+Steve Yegge noticed the same pattern. On New Year's Day 2026, he [announced](https://steve-yegge.medium.com/welcome-to-gas-town-4f25ee16dd04) [Gas Town](https://github.com/steveyegge/gastown) -- an orchestration layer for running *multiple* Claude Code agents in parallel. If Claude Code is a building sim, Gas Town is the megabase expansion pack -- and its 25 pages of mad-scientist documentation make the genre explicit.
 
 [TOC]
 
